@@ -13,8 +13,12 @@ class AddMensagensTable extends Migration
      */
     public function up()
     {
-        Schema::table('mensagens', function (Blueprint $table) {
-            //
+        Schema::create('mensagens', function (Blueprint $table) {
+            $table->increments('id');           //código identificador
+            $table->string('titulo');            //título da atividade
+            $table->string('texto');      //descrição da atividade
+            $table->string('autor');    //agendado para
+            $table->timestamps();      
         });
     }
 
